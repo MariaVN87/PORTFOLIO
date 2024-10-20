@@ -1,0 +1,208 @@
+@keyframes duck-fly-1 {
+  0% {
+    left: -100px;
+    top: 2vh;
+  }
+  50% {
+    left: 23vw;
+    top: 53vh;
+  }
+  100% {
+    left: 100vw;
+    top: 13vh;
+  }
+}
+@keyframes duck-fly-2 {
+  0% {
+    left: -100px;
+    top: 85vh;
+  }
+  50% {
+    left: 15vw;
+    top: 17vh;
+  }
+  100% {
+    left: 100vw;
+    top: 90vh;
+  }
+}
+@keyframes duck-fly-3 {
+  0% {
+    left: -100px;
+    top: 41vh;
+  }
+  50% {
+    left: 52vw;
+    top: 20vh;
+  }
+  100% {
+    left: 100vw;
+    top: 12vh;
+  }
+}
+@keyframes duck-fly-4 {
+  0% {
+    left: -100px;
+    top: 32vh;
+  }
+  50% {
+    left: 45vw;
+    top: 27vh;
+  }
+  100% {
+    left: 100vw;
+    top: 60vh;
+  }
+}
+@keyframes duck-fly-5 {
+  0% {
+    left: -100px;
+    top: 87vh;
+  }
+  50% {
+    left: 13vw;
+    top: 85vh;
+  }
+  100% {
+    left: 100vw;
+    top: 36vh;
+  }
+}
+@keyframes duck-fly-6 {
+  0% {
+    left: -100px;
+    top: 45vh;
+  }
+  50% {
+    left: 37vw;
+    top: 34vh;
+  }
+  100% {
+    left: 100vw;
+    top: 5vh;
+  }
+}
+@keyframes duck-fly-7 {
+  0% {
+    left: -100px;
+    top: 58vh;
+  }
+  50% {
+    left: 49vw;
+    top: 56vh;
+  }
+  100% {
+    left: 100vw;
+    top: 45vh;
+  }
+}
+@keyframes duck-fly-8 {
+  0% {
+    left: -100px;
+    top: 70vh;
+  }
+  50% {
+    left: 28vw;
+    top: 48vh;
+  }
+  100% {
+    left: 100vw;
+    top: 4vh;
+  }
+}
+@keyframes duck-fly-9 {
+  0% {
+    left: -100px;
+    top: 54vh;
+  }
+  50% {
+    left: 12vw;
+    top: 90vh;
+  }
+  100% {
+    left: 100vw;
+    top: 26vh;
+  }
+}
+@keyframes duck-fly-10 {
+  0% {
+    left: -100px;
+    top: 18vh;
+  }
+  50% {
+    left: 47vw;
+    top: 13vh;
+  }
+  100% {
+    left: 100vw;
+    top: 65vh;
+  }
+}
+body {
+  counter-reset: count;
+  height: 100vh;
+  margin: 0;
+  background-image: url(https://sun9-57.userapi.com/impg/59rxDI8DXqdfjg3dWoAJIGGQTB7VA9uyMwrKKg/rHpuXgIBb3A.jpg?size=807x403&quality=96&sign=03f4c95af043242f17cda903ff4f6853&c_uniq_tag=tjRA8T5K1XsO-cqOeqmcBtEoIsYOpBNAs0AbAQlooRg&type=album);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.duck-check {
+  position: absolute;
+  visibility: hidden;
+  left: 999999px;
+}
+.duck-check:checked {
+  counter-increment: count;
+}
+.duck-check:checked ~ label {
+  display: none;
+}
+
+.counter-info {
+  position: absolute;
+  top: 50px;
+  right: 30px;
+}
+.counter-info::before {
+  content: counter(count);
+}
+
+.duck {
+  position: absolute;
+}
+.duck__img {
+  width: 100px;
+}
+.duck_1 {
+  animation: duck-fly-1 4s ease-in 1s both;
+}
+.duck_2 {
+  animation: duck-fly-2 4s ease-in 2s both;
+}
+.duck_3 {
+  animation: duck-fly-3 4s ease-in 3s both;
+}
+.duck_4 {
+  animation: duck-fly-4 4s ease-in 4s both;
+}
+.duck_5 {
+  animation: duck-fly-5 4s ease-in 5s both;
+}
+.duck_6 {
+  animation: duck-fly-6 4s ease-in 6s both;
+}
+.duck_7 {
+  animation: duck-fly-7 4s ease-in 7s both;
+}
+.duck_8 {
+  animation: duck-fly-8 4s ease-in 8s both;
+}
+.duck_9 {
+  animation: duck-fly-9 4s ease-in 9s both;
+}
+.duck_10 {
+  animation: duck-fly-10 4s ease-in 10s both;
+}/*# sourceMappingURL=style.css.map */
