@@ -1,0 +1,301 @@
+@import '../vars';
+@import '../mixins';
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.center {
+    padding-left: calc(50% - $widthSite /2);
+    padding-right: calc(50% - $widthSite /2);
+}
+
+body {
+    font-family: "Lato", sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+@include Header;
+
+#burger {
+    position: absolute;
+    left: -999999px;
+    visibility: hidden;
+
+    &:checked~.nav__menu {
+        display: none;
+    }
+}
+
+@include NavMenu;
+
+.header__top {
+    background-color: rgba(248, 243, 244, 1);
+    @include centerflex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 60px;
+    padding-bottom: 60px;
+
+    .blog_left {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: $ColorText;
+    }
+}
+
+.registration {
+    display: flex;
+    flex-direction: row;
+    gap: 128px;
+    margin-top: 64px;
+    margin-bottom: 96px;
+
+    &__left {
+        display: flex;
+        flex-direction: column;
+        max-width: 360px;
+
+        &_name {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #222222;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #name {
+            max-width: 360px;
+            max-height: 45px;
+            padding-left: 17px;
+            padding-top: 13px;
+            padding-bottom: 16px;
+            border: 1px solid rgba(164, 164, 164, 1);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #B1B1B1;
+        }
+
+        &_checkbox {
+            display: flex;
+            gap: 10px;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 11px;
+            line-height: 13px;
+            color: #000000;
+            padding-top: 31px;
+            padding-bottom: 33px;
+            align-items: flex-end;
+        }
+
+        &_checkbox>label {
+            padding-right: 10px;
+        }
+
+        #checkbox {
+            appearance: none;
+            /* Убираем стандартный вид чекбокса */
+            width: 17px;
+            /* Ширина кастомного чекбокса */
+            height: 17px;
+            /* Высота кастомного чекбокса */
+            border-radius: 50%;
+            /* Делаем чекбокс круглым */
+            border: 2px solid rgba(164, 164, 164, 1);
+            /* Цвет рамки */
+            outline: none;
+            /* Убираем обводку */
+            cursor: pointer;
+            /* Указатель при наведении */
+        }
+
+        #checkbox:checked {
+            background-color: #000;
+        }
+
+        .checkboxPad {
+            display: none;
+        }
+
+        &_login {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 19px;
+            color: #222222;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #login {
+            max-width: 360px;
+            max-height: 45px;
+            padding-left: 17px;
+            padding-top: 13px;
+            padding-bottom: 16px;
+            border: 1px solid rgba(164, 164, 164, 1);
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #B1B1B1;
+        }
+
+        &_text {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 13px;
+            line-height: 16px;
+            color: #B1B1B1;
+            margin-top: 15px;
+            margin-bottom: 39px;
+        }
+
+        &_btn {
+            width: 167px;
+            height: 50px;
+            border: none;
+            background-color: $ColorText;
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #FFFFFF;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        &_btn:hover {
+            box-shadow: 1px 4px 20px rgb(156, 155, 155);
+        }
+    }
+
+    &__right {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 24px;
+        line-height: 29px;
+        color: #000000;
+
+        &_p {
+            padding-top: 22px;
+            padding-bottom: 21px;
+        }
+
+        &_ul {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            list-style-type: none;
+        }
+
+        &_li::before {
+            content: '✓';
+            padding-right: 22px;
+        }
+    }
+
+}
+
+.footer {
+    background-image: url(/PORTFOLIO/PROJECT_HTML/image/footer_center_img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left bottom;
+    @include Footer;
+}
+
+@media screen and (max-width: 1024px) {
+    .center {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .nav__menu {
+        right: 0;
+    }
+
+    .registration {
+        gap: 22px;
+
+        &__left_name {
+            font-size: 16px;
+        }
+
+        .checkboxPad {
+            display: block;
+        }
+
+        &__right {
+            font-size: 16px;
+            width: 360px;
+        }
+
+    }
+
+    .footer {
+        .footer_top {
+            display: none;
+        }
+
+        @include FooterPad
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .center {
+        padding-left: 8px;
+        padding-right: 8px;
+    }
+
+    .header {
+        .mobil {
+            display: none;
+        }
+    }
+
+    .header__top {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+    .registration {
+        flex-direction: column;
+        gap: 40px;
+
+        .checkboxPad {
+            display: block;
+        }
+
+        &__right {
+            font-size: 16px;
+        }
+    }
+
+    .footer {
+        .footer_top {
+            display: none;
+        }
+
+        .footer_center_foto {
+            margin-top: 64px;
+        }
+
+        @include FooterMob;
+    }
+}

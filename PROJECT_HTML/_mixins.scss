@@ -1,0 +1,295 @@
+@mixin centerflex() {
+    display: flex;
+    align-items: center;
+}
+
+@mixin Header() {
+    .header {
+        background-color: $BackBlog;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &__left {
+            display: flex;
+            align-items: center;
+            gap: 41px;
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            position: relative;
+        }
+
+        .cart__number {
+            position: absolute;
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            color: $ColorFonts;
+            background-color: $ColorText;
+            font-size: 12px;
+            text-align: center;
+            right: -10px;
+            top: 5px;
+        }
+    }
+}
+
+@mixin NavMenu() {
+    .nav__menu {
+        width: $widthBurgerMenu;
+        padding: 32px;
+        top: 60px;
+        right: 0;
+        background: #FFFFFF;
+        box-shadow: 6px 4px 35px rgba(0, 0, 0, 0.21);
+        position: absolute;
+        box-sizing: border-box;
+        z-index: 3;
+
+        &_menu {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+            color: #000000;
+            margin-bottom: 24px;
+        }
+
+        &_item {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        &_title {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: $ColorText;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        &_link {
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+            color: #6F6E6E;
+        }
+
+    }
+}
+
+@mixin FooterTop {
+    .footer_top {
+        background-color: $BackBlog;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 30px;
+        padding-top: 104px;
+        padding-bottom: 104px;
+        margin-top: 95px;
+
+        .footer_block {
+            text-align: center;
+
+            .footer_title {
+                color: white;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
+                padding: 28px 16px;
+            }
+
+            .footer_text {
+                color: white;
+                font-style: normal;
+                font-weight: 400;
+                font-size: 14px;
+                line-height: 17px;
+                text-align: center;
+            }
+        }
+
+        .footer_title:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+@mixin Footer {
+    .footer_center {
+        max-width: 1600px;
+        height: auto;
+        margin: 0 auto;
+
+        &_block {
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-around;
+            gap: 224px;
+
+        }
+
+        &_foto {
+            text-align: center;
+            width: 360px;
+            margin-top: 97px;
+            margin-bottom: 126px;
+
+            .footer_center_foto img {
+                margin-bottom: 20px;
+
+            }
+
+            .footer_center_p {
+                font-style: normal;
+                font-weight: 400;
+                font-size: 20px;
+                line-height: 24px;
+                text-align: center;
+            }
+        }
+
+        .footer_input {
+
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+
+            &_title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 24px;
+                line-height: 167%;
+            }
+
+            &_text {
+                font-style: normal;
+                font-size: 18px;
+                margin-bottom: 30px;
+            }
+
+            .footer_form {
+                display: flex;
+                justify-content: center;
+                width: 356px;
+                text-align: center;
+
+                .input_email {
+                    width: 70%;
+                    height: 49px;
+                    border-radius: 20px 0 0 20px;
+                    border: rgb(248, 248, 248);
+                    background-color: rgb(248, 248, 248);
+                    padding-left: 20px;
+                }
+
+                .footer_btn {
+                    width: 30%;
+                    height: 49px;
+                    border-radius: 0 20px 20px 0;
+                    border: $ColorText;
+                    background-color: $ColorText;
+                    color: $ColorFonts;
+                }
+
+                .footer_btn:hover {
+                    box-shadow: 1px 4px 20px rgb(156, 155, 155);
+                }
+            }
+        }
+    }
+
+    .footer_botom {
+        background-color: black;
+        display: flex;
+        justify-content: space-between;
+        height: 79px;
+        align-items: center;
+
+        &_text {
+            color: white;
+        }
+
+        .footer_botom_img:hover {
+            transform: scale(2);
+        }
+    }
+}
+
+@mixin FooterPad {
+    .footer_top {
+        flex-direction: column;
+        gap: 50px;
+        padding: 48px 210px 70px 210px;
+    }
+
+    .footer_center_block {
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 140px;
+    }
+
+    .footer_center_foto {
+        margin-bottom: 0;
+    }
+}
+
+@mixin FooterMob {
+
+    .footer_top {
+        flex-direction: column;
+        gap: 50px;
+        padding: 50px 20px 80px 20px;
+        margin-top: 60px;
+    }
+
+    .footer_center_block {
+        flex-direction: column;
+        gap: 50px;
+        padding-bottom: 110px;
+    }
+
+    .footer_botom {
+        display: flex;
+        flex-direction: column-reverse;
+        padding-top: 43px;
+        padding-bottom: 9px;
+    }
+
+    .footer_center_foto {
+        margin-bottom: 0;
+    }
+
+    .footer_center_p {
+        font-size: 18px;
+        line-height: 22px;
+    }
+
+    .footer_input {
+        .footer_input_text {
+            font-size: 14px;
+        }
+    }
+
+}
